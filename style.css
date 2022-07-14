@@ -1,0 +1,283 @@
+.background{
+  position: relative;
+  width: 100%;
+}
+
+.bg-img{
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 30vh;
+  background-image: url("images/bg-desktop-light.jpg");
+}
+
+.wrapper{
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+
+.wrapper-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.wrapper-header p{
+  margin: 0;
+  color: #fff;
+  letter-spacing: 10px;
+  font-size: 2.5rem;
+}
+
+#theme{
+  cursor: pointer;
+}
+
+/* Input Form  */
+.wrapper-input{
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.wrapper-input .fa-feather-pointed{
+  position: absolute;
+  top: 48%;
+  transform: translateY(-50%);
+  left: 5%;
+  font-size: 1.25rem;
+  color: var(--secondary);
+}
+
+.wrapper-input input{
+
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--secondary);
+  background-color: var(--bg-color);
+  padding: 1rem 1rem 1rem 3.5rem;
+
+  font-size: 1.25rem;
+  border-radius: 5px;
+
+}
+
+.wrapper-input input::placeholder{
+  color: var(--primary);
+}
+
+
+/* Todo Content  */
+
+.container{
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
+}
+
+.taskbox{
+
+  background: var(--bg-color);
+  padding: 1.5rem 1rem 0;
+  margin: 0;
+  
+}
+
+.task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--secondary);
+  padding: 1.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.task p.checked{
+  text-decoration: line-through;
+}
+
+.task:first-child{
+  padding-top: 0;
+}
+
+.task label{
+  display: flex;
+  align-items: center;
+}
+
+.task input{
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* Todo Edit & Delete  */
+.setting{
+  position: relative;
+  cursor: pointer;
+}
+
+.setting-menu{
+  width: 120px;
+
+  position: absolute;
+  z-index: 2;
+  top: 25%;
+  right: 0px;
+  background: var(--bg-color);
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
+  cursor: pointer;
+
+  transform: scale(0);
+  transform-origin: top right;
+  transition: all 300ms ease;
+}
+
+.setting .setting-menu.show{
+  transform: scale(1);
+}
+
+.setting-menu li{
+  padding: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.setting-menu li:last-child{
+  margin-bottom: 0;
+}
+
+.setting-menu li:hover{
+  background-color: var(--tertiary);
+}
+
+.setting-menu > li > i,
+.setting-menu > li > span{
+  margin-left: 0.8rem;
+}
+
+/* Controls  */
+.controls {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--primary);
+  background-color: var(--bg-color);
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 3px;
+
+}
+
+.filters,
+.clear-ctrl{
+  cursor: pointer;
+}
+
+.controls span {
+  font-size: 1rem;
+}
+
+.filters{
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mobile-filters{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  cursor: pointer;
+  color: var(--primary);
+  background-color: var(--bg-color);
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
+  font-size: 0.9rem;
+  border-radius: 6px;
+  padding: 1rem;
+  transform: scale(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.filters p{
+  transition: color 300ms ease-in-out;
+}
+
+
+.filters p:hover,
+.filters .active,
+.mobile-filters .active{
+  color: rgb(49, 169, 255);
+}
+
+#clear:hover{
+  color: rgb(49, 169, 255);
+}
+
+@media only screen and (max-width:768px) {
+
+  .bg-img{
+    background-image: url("images/bg-mobile-light.jpg");
+  }
+  
+  .wrapper{
+    width: 90%;
+    top: 15%;
+    font-size: 0.9rem;
+  }
+
+  .wrapper-header{
+    margin-bottom: 1.5rem;
+  }
+
+  .wrapper-header p{
+    font-size: 1.5rem;
+  }
+
+  .wrapper-input input{
+    font-size: 1rem;
+  }
+
+  .taskbox{
+    padding: 1rem 1rem 0 ;
+  }
+
+  .task{
+    padding: 1rem 0;
+  }
+  
+  .setting-menu,
+  .setting-menu span{
+    font-size: 0.8rem;
+  }
+
+  .setting-menu{
+    width: 90px;
+  }
+
+  .controls,
+  .controls span{
+    font-size: 0.7rem;
+  }
+
+  .controls .filters{
+    display: none;
+  }
+  
+  .mobile-filters{
+    transform: scale(1);
+    margin-top: 1rem;
+  }
+
+}

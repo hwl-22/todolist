@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+
+    <!--css links-->
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- cdn js library  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+  </head>
+  <body>
+    <div class="background">
+      <span class="bg-img"></span>
+
+      <!-- Todo Section  -->
+      <div class="wrapper">
+        <div class="wrapper-header">
+          <p class="fw-b">TODO</p>
+          <img id="theme" src="/images/icon-moon.svg" alt="theme" aria-label="toggle dark-mode" />
+        </div>
+        <div class="wrapper-input">
+            <i class="fa-solid fa-feather-pointed"></i>
+            <input type="text" placeholder="Create a new todo..." />
+        </div>
+
+        <div class="container">
+          <ul class="taskbox">
+            <li class="task">
+              <label for="1">
+                <input type="checkbox">
+                <p>Please Add Tasks</p>
+              </label>
+              <div class="setting">
+                <i class="fa-solid fa-ellipsis"></i>
+                  <ul class="setting-menu">
+                    <li><i class="fa-solid fa-pen-to-square"></i><span>Edit</span></li>
+                    <li><i class="fa-solid fa-trash"></i><span>Delete</span></li>
+                  </ul>
+              </div>
+            </li>
+          </ul>
+  
+            <!-- Control Section  -->
+            <div class="controls">
+              <div class="remaining-items">
+                <span id="item"></span> <span>items left</span>
+              </div>
+              <div class="filters">
+                <p id="all" class="active fw-b">All</p>
+                <p id="pending" class="fw-b">Pending</p>
+                <p id="completed" class="fw-b">Completed</p>
+              </div>
+              <div class="clear-ctrl">
+                <span id="clear">Clear Completed</span>
+              </div>
+            </div>
+        </div>
+        
+          <!-- Mobile Filters  -->
+          <div class="mobile-filters filters">
+            <p id="all" class="active fw-b">All</p>
+            <p id="pending" class="fw-b">Pending</p>
+            <p id="completed" class="fw-b">Completed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <script src="script.js"></script>
+  </body>
+</html>
